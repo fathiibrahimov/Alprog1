@@ -1,41 +1,42 @@
 #include <stdio.h>
+
 int main(){
-	int hasilnama=0;
-	int hasilkode=0;
+	int hasilnama=0;//untuk menampung hasil nama
+	int hasilkode=0;//untuk menampung hasil kode
 	
-	int n;
-	scanf("%d", &n);
+	int n;//untuk menampung panjang nama
+	scanf("%d", &n);//meminta masukan user untuk panjang nama
 	
-	char nama[n];
+	char nama[n];//untuk menampung nama
 	
-	int a;
-	for(a=0;a<n;a++){
+	int a;//untuk iterator
+	for(a=0;a<n;a++){//meminta masukan user untuk nama
 		scanf(" %c", &nama[a]);
 	}
 	
-	int m;
-	scanf("%d", &m);
+	int m;//untuk menampung panjang kode
+	scanf("%d", &m);//meminta masukan user untuk panjang kode
 	
-	char kode [m];
+	char kode [m];//untuk menampung kode
 	
-	int b;
-	for(b=0;b<m;b++){
+	int b;//untuk iterator
+	for(b=0;b<m;b++){//meminta masukan user untuk kode
 		scanf(" %c", &kode[b]);
 	}
 	
+	//membuat sample untuk memudahkan (atau meribetkan) diri saya sendiri, karena pada saat tp5 rilis
 	char database1[26]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n',
 	'o','p','q','r','s','t','u','v','w','x','y','z'};
 	char database2[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N',
 	'O','P','Q','R','S','T','U','V','W','X','Y','Z'};
 	char database3[10]={'0','1','2','3','4','5','6','7','8','9'};
-	char vokal[5]={'a','i','u','e','o'};
+	char vokal[10]={'a','i','u','e','o','A','I','U','E','O'};
 	char konsonan[42]={'b','c','d','f','g','h','j','k','l','m','n'
 	,'p','q','r','s','t','v','w','x','y','z','B','C','D','F','G','H','J','K','L','M','N',
 	'P','Q','R','S','T','V','W','X','Y','Z'};
 	
 	int c;
 	int d;
-	
 	for(c=0;c<n;c++){
 		for(d=0;d<26;d++){
 			if(nama[c]==database1[d]){
@@ -57,7 +58,7 @@ int main(){
 	int g;
 	int h;
 	for(g=0;g<n;g++){
-		for(h=0;h<5;h++){
+		for(h=0;h<10;h++){
 			if(nama[g]==vokal[h]){
 				hasilnama=hasilnama+4;
 			}
@@ -112,9 +113,8 @@ int main(){
 		}
 	}
 	if(check==m){
-		printf("%d", hasilnama);
-		printf("-");
-		printf("%d ", hasilkode);
+		printf("%d-%d ", hasilnama,hasilkode);
+
 		int aa;
 		for(aa=0;aa<n;aa++){
 			printf("%c", nama[aa]);
